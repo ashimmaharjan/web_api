@@ -1,0 +1,50 @@
+<html>
+
+<head>
+    <title>JQ Image Hiding</title>
+    <link href="style/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="style/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="jquery/jquery-3.3.1.js">
+    </script>
+    <style>
+        #first {
+            margin-left: 550px;
+        }
+
+        #second img {
+            width: 700px;
+            height: 400px;
+            margin-left: 300px;
+        }
+
+        #third img {
+            margin-left: 550px;
+        }
+
+        #fourth img {
+            width: 700px;
+            height: 400px;
+            margin-left: 300px;
+        }
+    </style>
+    <script>
+        $(#thirdImg).click(function () {
+            $(#second).hide();
+        })
+    </script>
+</head>
+<h1 class="display-1 text-primary text-center">Image hiding practice</h1>
+<div id="first">
+    <img id="firstImg" src="plus.jpg" alt="">
+</div>
+<div id="second">
+    <img id="secondImg" src="4k-anime-wallpapers-background-pictures-by-kashouv.jpg" alt="">
+</div>
+<div id="third">
+    <p id="thirdImg"> Third Image </p>
+</div>
+<div id="fourth">
+    <img id="fourthImg" src="27164494-buddhism-wallpapers.jpg" alt="">
+</div>
+
+</html>

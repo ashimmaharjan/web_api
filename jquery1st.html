@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="jquery/jquery-3.3.1.js"></script>
+    <script>
+        $(document).ready(function () {   //document.ready function allows you to put script files anywhere in the file.
+
+            $("#frst").click(function () {
+
+                var image_source = $("#frst").attr("src");
+                if (image_source == "plus.jpg") {
+                    $("#frst").attr("src", "minus.jpg");
+                    $("#frst").attr("width", "170px;");
+                    $("#frst").attr("height", "170px");
+                    $("#scnd").hide();
+                }
+                else {
+                    $("#frst").attr("src", "plus.jpg");
+                    $("#scnd").show();
+                }
+
+            });
+            $("#thrd").click(function () {
+
+                var image_source = $("#thrd").attr("src");
+                if (image_source == "plus.jpg") {
+                    $("#thrd").attr("src", "minus.jpg");
+                    $("#thrd").attr("width", "170px;");
+                    $("#thrd").attr("height", "170px");
+                    $("#frth").hide();
+                }
+                else {
+                    $("#thrd").attr("src", "plus.jpg");
+                    $("#frth").show();
+                }
+
+            });
+
+        });
+    </script>
+    <style>
+        #frst {
+            margin-left: 550px;
+        }
+
+        #scnd {
+
+            margin-left: 300px;
+        }
+
+        #thrd {
+            margin-left: 550px;
+        }
+
+        #frth {
+
+            margin-left: 300px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <p><img id="frst" src="plus.jpg" alt="">
+    </p>
+    <p>
+        <img id="scnd" src="4k.jpg" alt="" width="700px" height="400px">
+    </p>
+    <p>
+        <img id="thrd" src="plus.jpg" alt="">
+    </p>
+    <p>
+        <img id="frth" src="buddhism.jpg" alt="" width="700px" height="400px">
+    </p>
+
+
+</body>
+
+</html>

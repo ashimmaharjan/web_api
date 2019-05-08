@@ -1,0 +1,21 @@
+<form action="/insert-data" method="POST">
+
+{{#each friends}}
+    <label for="name">
+        Name: <input type="text" name="clientName" value="{{this.clientName}}" required>
+    </label>
+    <br>
+    <label for="email">
+        Email: <input type="email" name="clientEmail" value="{{this.clientEmail}}" required>
+    </label>
+    <br>
+    <label for="address">
+        Address: <input type="text" name="clientAddress" value="{{this.clientAddress}}" required>
+    </label>
+    <br>
+    {{/each}}
+    <button type="submit">
+        Update
+    </button>
+
+</form>

@@ -1,0 +1,30 @@
+<table border="7">
+    <tbody>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Delete</th>
+            <th>Update</th>
+        </tr>
+        {{#each friends}}
+        <tr>
+            <td>
+                {{this.clientName}}
+            </td>
+            <td>
+                {{this.clientEmail}}
+            </td>
+            <td>
+                {{this.clientAddress}}
+            </td>
+            <td>
+                <a href="/delete/{{this._id}}"> Delete </a>
+            </td>
+            <td>
+                <a href="/update/{{this._id}}"> Update </a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

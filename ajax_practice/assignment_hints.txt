@@ -1,0 +1,5 @@
+project title (1000projects .org)
+brief description of the project domain, scope and main use of it!
+list main features (at least four different entities including user features)
+
+this document should at least be more than one page approx 1000 words.

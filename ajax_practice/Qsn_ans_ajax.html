@@ -1,0 +1,40 @@
+<html>
+<title>Quiz</title>
+<script src="jquery/jquery-3.3.1.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $("#submit").click(function () {
+            var capitalN = $("#nepal").val();
+            var capitalI = $("#india").val();c
+            var capitalJ = $("#japan").val();
+            var score = 0;
+            $.getJSON('capitalCities.json', function (answers) {
+                if (capitalN == answers.Nepal) {
+                    score = score + 1;
+                }
+                if (capitalI == answers.India) {
+                    score = score + 1;
+                }
+                if (capitalJ == answers.Japan) {
+                    score = score + 1;
+                }
+                alert("Your score is: " + score);
+            })
+
+        })
+    })
+</script>
+
+<body>
+    <p>1. What is the capital of Nepal?</p>
+    <p><input type="text" id="nepal" placeholder="Enter answer"></p>
+    <p>2. What is the capital of India?</p>
+    <p><input type="text" id="india" placeholder="Enter answer"></p>
+    <p>3. What is the capital of Japan?</p>
+    <p><input type="text" id="japan" placeholder="Enter answer"></p>
+    <p><input type="button" id="submit" value="Submit"></p>
+    <p id="res">Score</p>
+</body>
+
+</html>

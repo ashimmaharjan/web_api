@@ -1,0 +1,2 @@
+successful operation of ajax function in jquery.
+<br><h1><b>Congratulations</b></h1></br>

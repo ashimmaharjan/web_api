@@ -1,0 +1,50 @@
+<html>
+<link href="style/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="style/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<script>
+    function myFunction() {
+        var one = document.getElementById("a").value;
+        var two = document.getElementById("b").value;
+        if (one == "admin" || one == "username") {
+            document.getElementById("text").innerHTML = "Username alreday taken."
+            document.getElementById("a").focus();
+            return false;
+        }
+        else if (one == "") {
+            document.getElementById("text").innerHTML = "Username cannot be blank.";
+            document.getElementById("a").focus();
+            return false;
+        }
+        else if (two == "") {
+            document.getElementById("text").innerHTML = "Password cannot be blank.";
+            document.getElementById("b").focus();
+            return false;
+        }
+        else {
+            document.getElementById("text").innerHTML = "Username taken successfully as: " + one;
+        }
+
+        return false; // use of false: by default form ko kam lai rokne. return one use garda pani hunxa.
+    }
+</script>
+<div class="row">
+    <div class="col-md-4 ml-5 mt-2 bg-success">
+        <form action="">
+            <p id="text" class="display-4 text-danger text-center"></p>
+            <div class="form-group">
+                <p class="text-uppercase text-center"> username <input type="text" class="form-control" id="a">
+                </p>
+            </div>
+            <div class="form-group">
+                <p class="text-uppercase text-center">password <input type="text" class="form-control" id="b">
+                </p>
+            </div>
+
+            <div class="form-group">
+                <p><button onclick="return myFunction()" class="btn btn-secondary"> Submit </button></p>
+            </div>
+        </form>
+    </div>
+</div>
+
+</html>

@@ -1,0 +1,32 @@
+<html>
+<title>Another ajax practice</title>
+<script src="jquery/jquery-3.3.1.js"></script>
+
+<script>
+    $(document).ready(function () {
+
+        $("#btn").click(function () {
+
+            $.getJSON('result.json', function (rd) {
+                $('#mydiv').html("name is:" + rd.name + " " + "age is:" + rd.age + " " + "address is:" + rd.address);
+                $("#mydiv2").html("<table border='9'>" +
+                    "<p><td>Name</td><td>" + rd.name + "</td></p>" +
+                    "<p><td>Age</td><td>" + rd.age + "</td></p>");
+            })
+        });
+
+    });
+</script>
+
+<body>
+    <div id="mydiv">
+        STAGE
+    </div>
+    <div id="mydiv2">
+        Table here
+    </div>
+    <input type="button" id="btn" value="Load data">
+</body>
+
+
+</html>

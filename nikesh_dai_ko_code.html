@@ -1,0 +1,62 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+        .qq {
+            position: relative;
+        }
+
+        .a {
+            position: relative;
+        }
+
+        .ram {}
+    </style>
+</head>
+
+<body>
+
+    <p id="ya">We are in <u>Dillibazaar</u></p>
+    <p class="yay">This is us</p>
+    <p class="wew">We are in Dillibazaar</p>
+    <p class="eh">Here we are</p>
+    <img src="abc.jpg" class="qq" width="100px" height="100px">
+    <p id="lo">Click me</p>
+    <img src="abc.png" class="a" width="200px" height="200px">
+    <script>
+
+        $("#ya u").click(function ()// use # for id , . for class and nothing for tags onn the braces after $ 
+        //.click is the action performed and function() is a function
+        {
+            $(".yay").hide();// here hide is the command used on yay class to define the change on class yay \
+            $(".wew").toggle();//toggle is used to hide and unhide on the click
+            $(".eh").slideToggle(5000);//slide toggle is a type of toggle '5000' is the number of milisec so animation time can be defined.
+            $(".qq").animate({ "left": "100px" });// animate is like sliding the picture (note:you have to use position relative to create the image into higher layer so that it can be moved just like a 3D concept the image has another layer)
+        });
+
+        $("#lo").click(function ())
+        {
+            $(".a").animate({ "right": "100px" });
+            $(".a").animate({ "bottom": "100px" });
+        });
+
+        $("#abc").click(function () {
+            $(".ww").addClass("ram");// if you wanna change css then use addClass to add css changes on the .ww class also in jquery if there are two words in a command like addclass use upper case for the 2nd word's first letter here addClass is used instead of addclass
+
+        });
+
+        $("#abc").click(function () {
+            $(".qq").attr("src", "drone.jpg");//attr to change attribute of a tag like width or src or height
+            $(".qq").attr("width", "100px");// have to create another command to use for several attributes
+            var a = $(".qq").attr("src");// this is used to get the value of the attribute of the class qq and store it for further use.
+            if (a == "aero.jpg") {
+                $(".qq".attr("src", "aero.jpg"));
+            }
+        }
+        );
+
+    </script>
+</body>
+
+</html>

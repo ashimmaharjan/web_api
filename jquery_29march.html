@@ -1,0 +1,31 @@
+<html>
+
+<head>
+    <title>
+        Paragragh ko value change garne ra textbox ko value tanne
+    </title>
+    <script src="jquery/jquery-3.3.1.js"></script>
+</head>
+
+<body>
+    <p>USD $:<input type="number" id="txt1" placeholder="Enter amount"></p>
+    <p>NRS Rs.:<input type="number" id="txt2" placeholder="Enter amount"></p>
+
+    <p id="demo">HELLO CUSTOMER</p>
+    <p id="demo2"> Text inplace if html </p>
+    <button id="btn">Convert into Nepalese Rupees.</button>
+</body>
+<script>
+    $(document).ready(function () {
+
+        $("#btn").click(function () {
+            var a = $("#txt1").val();
+            var doll = a * 109.75;
+            $("#demo").text("The result is: " + doll);
+            $("#demo2").html("<b> Result: </b>" + doll);
+            $("#txt2").val(doll);
+        })
+    })
+</script>
+
+</html>

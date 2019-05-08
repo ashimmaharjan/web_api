@@ -1,0 +1,38 @@
+<html>
+
+<script>
+    function add() {
+        var a = parseInt(document.getElementById('one').value);
+        var b = parseInt(document.getElementById('two').value);
+        var c = document.getElementById('ath').value;
+        if (c == "add") {
+            var total = a + b;
+            alert("The sum of the two numbers you entered is: " + total);
+        }
+        else if (c == "subs") {
+            var total = a - b;
+            alert("The substraction of the two numbers you entered is: " + total);
+
+        }
+        else if (c == "mult") {
+            var total = a * b;
+            alert("The multiplication of the two numbers you entered is: " + total);
+
+        }
+        else {
+            alert("error");
+        }
+    }
+</script>
+<p> Enter a number: <input type="text" id="one"></p>
+<p> Enter another number: <input type="text" id="two"></p>
+<p>
+    <select name="arithmetic" id="ath">
+        <option value="add"> Add </option>
+        <option value="subs"> Substract </option>
+        <option value="mult"> Multiply </option>
+    </select>
+</p>
+<p><button type="button" onclick="add()"> Do the math </button></p>
+
+</html>
