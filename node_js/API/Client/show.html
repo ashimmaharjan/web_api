@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <title>The jQuery Example</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+
+      $.getJSON('http://localhost:2000/getUsers', function (res) {
+
+        $.each(res, function (index) {
+          $('#stage').append('<p> Name: ' + res[index].name + '</p>' +
+            "<p>Age : " + res[index].age + "<p/>" + "<p>Address : " + res[index].address + "<p/>" +
+            '<a href="http://localhost:2000/update/' + res[index]._id + '">' + 'Update' + '</a>' + "<br/>" +
+            '<a href="http://localhost:2000/delete/' + res[index]._id + '">' + 'Delete' + '</a>'
+          );
+        });
+
+      });
+
+
+    });
+  </script>
+</head>
+
+<body>
+
+  <div id="stage" style="background-color:#fff;">
+    STAGE
+  </div>
+
+  <input type="button" id="driver" value="Load Data" />
+
+</body>
+
+</html>

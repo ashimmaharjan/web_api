@@ -1,0 +1,70 @@
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="style/bootstrap.css">
+    <link rel="stylesheet" href="style/bootstrap.min.css">
+    <script src="jquery/jquery-3.3.1.js"></script>
+
+    <script>
+        $(document).ready(function () {
+
+            $.getJSON('http://localhost:9898/getUsers', function (res) {
+                $.each(res, function (index) {
+                    $('#stage').append('<p> Name : ' + res[index].name + '</p>' +
+                        '<p> Age : ' + res[index].age + '</p>' +
+                        '<p> Address: ' + res[index].address + '</p>' +
+                        '<p> ---------------------------------------------------</p>');
+                    $('#stage').append('<p><button id="delete" value="' + res[index]._id + '">Delete</button></p>');
+
+                    $('#stage').on('click', '#delete', function () {
+
+                        id = $(this).val();
+                        alert(id);
+                        $.ajax({
+                            url: 'http://localhost:3000/deleteuser/' + id,
+                            type: 'DELETE',
+                            dataType: 'json',
+                            data: id,
+                            success: function (data, textStatus, xhr) {
+                                console.log(data);
+                            },
+                            error: function (xhr, textStatus, errorThrown) {
+                                console.log('Error in Operation');
+                            }
+                        });
+                    });
+                });
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+
+            $.getJSON('http://localhost:9898/getProducts', function (res) {
+                $.each(res, function (index) {
+                    $('#stage2').append('<p> Product Name : ' + res[index].name + '</p>' +
+                        '<p> Product Type: ' + res[index].type + '</p>' +
+                        '<p> Quantity: ' + res[index].quantity + '</p>' +
+                        '<p> ---------------------------------------------------</p>');
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <div id="stage" style="background-color:#cc0;">
+        <h1>User Details</h1>
+    </div>
+
+    <div id="stage2" style="background-color:darksalmon;">
+        <h1>Product Details</h1>
+    </div>
+
+
+</body>
+
+</html>

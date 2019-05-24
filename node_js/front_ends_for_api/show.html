@@ -1,0 +1,31 @@
+<html>
+
+<head>
+    <title>
+        Display all the users
+    </title>
+    <script src="jquery/jquery-3.3.1.js"></script>
+</head>
+<script>
+    $(document).ready(function () {
+
+        $.getJSON('http://localhost:700/show', function (res) {
+            $.each(res, function (index) {
+                $('#stage').append('<p> Email : ' + res[index].email + '</p>' +
+                    '<p> Password : ' + res[index].password + '</p>' +
+                    '<p> Remember me: ' + res[index].rememberMe + '</p>' +
+                    "<a href = 'http://localhost:700/delete/" + res[index]._id + "'> Delete </a >" +
+                        "<a href = 'http://localhost:700/update/" + res[index]._id + "'> Update </a >");
+
+            });
+        });
+    });
+</script>
+
+<body>
+    <div id="stage" style="background-color:#cc0;">
+        <h1>User Details</h1>
+    </div>
+</body>
+
+</html>
